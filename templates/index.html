@@ -1,0 +1,100 @@
+{% extends 'header.html' %}
+
+{% block title %}
+Play the Lyre
+{% endblock %}
+
+{% block body %}
+
+ <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="header-content">
+                        <div class="header-content-inner">
+                            <h1>With just your facial expressions, Lyre matches you with the right tunes.</h1>
+                            <a href="#download" class="btn btn-outline btn-xl page-scroll">Start Now for Free!</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="device-container">
+                        <div class="device-mockup iphone6_plus portrait white">
+                            <div class="device">
+                                <div class="screen">
+                                   <img src="{{ url_for('static', filename='img/mood4.jpg') }}">
+                                </div>
+                                </div>
+                                <div class="button">
+                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="download" class="download bg-primary text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2 class="section-heading">Scan Now!</h2>
+                    <p></p>
+                    <div class="badges">
+                  
+  
+                     
+<form method='post' action='/go/' enctype='multipart/form-data'>
+
+<p>
+<label class="btn btn-default btn-file">
+    Browse <input type="file" name="file" hidden>
+</label>
+    <br><br>
+<input type="submit"  class="btn btn-primary" value='Upload'>
+</p>
+</form>
+                       
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section class="cta">
+        <div class="cta-content">
+            <div class="container">
+                <h2>Hands free<br>Always better<span class="glyphicon glyphicon-headphones"></span></h2>
+            
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </section>
+
+    <section id="contact" class="contact bg-primary">
+        <div class="container">
+            <h2>Follow us on Social Media.</h2>
+            <ul class="list-inline list-social">
+                <li class="social-twitter">
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li class="social-facebook">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li class="social-google-plus">
+                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+
+
+
+{% endblock %}

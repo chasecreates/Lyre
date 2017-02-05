@@ -1,0 +1,93 @@
+{% extends 'header.html' %}
+
+{% block title %}
+Results
+{% endblock %}
+
+{% block body %}
+
+
+
+<style>
+
+    .track-info {
+        color:#000;
+    }
+    .track-name {
+        color:#000;
+    }
+    .album-name {
+        color:#000;
+    }
+    
+    .panel-body {
+        color:#000;
+    }
+</style>
+
+    <section id="download" class="download bg-primary text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2 class="section-heading">Try These Songs!</h2>
+                    <p></p>
+            
+  <div style="width:100%" class="panel panel-primary">
+     
+      <div class="panel-body">
+              {% if tracks %}
+                  
+
+
+<table  class="table table-condensed tracks">
+  <thead>
+    <tr>
+      <th>Track Name</th>
+        <th>Artist</th>
+        <th>Preview</th>
+      <th>Popularity</th>
+    </tr>
+  </thead>
+    {% for t in tracks %}
+
+        <tr class="track">
+            <td> {{ t.name }} </td>
+            <td>{{ artist.name }} </td>
+            
+     
+          <td>
+              <div class="track-info">
+                <span class="track-name">{{ t.name }}</span>
+                <span class="album-name">
+                  <a href="{{t.album.external_urls.spotify}}">
+                      {{ t.album.name }}
+                  </a>
+                </span>
+              </div>
+              <audio src="{{ t.preview_url }}" preload="auto" />
+          </td>
+          <td class="number">{{ t.popularity }}</td>
+        </tr>
+    {% endfor %}
+
+</table>
+
+              {% endif %}
+            </div>
+     
+               </div>
+    </div>        
+
+               
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+   
+          
+
+
+{% endblock %}
